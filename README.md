@@ -1,9 +1,9 @@
 # Quantum-Localization
 Minimal code and results from the paper 'Unveiling Order from Chaos by approximate 2-localization of random matrices'
 
-`goe_spectra` countains spectra in text format. `goe_spectra/N/k` is the kth sample of system size N (dimention $2^N$).
+`goe_spectra` countains spectra in text format. `goe_spectra/N/k` is the kth sample of system size N (dimention $2^N$). All the spetra are normalized to 1.
 
-`localized` contains the coeficients $h_i$ after 2-localization of the GOE spectrums. `localized/N/k` are the $h_i$ corresponding to the kth sample of system size N.
+`localized` contains the coeficients $h_i$ after 2-localization of the GOE spectrums. `localized/N/k` are the $h_i$ corresponding to the kth sample of system size N. The $h_i$ are generated in same order as the $\tau_i$ returned by the `pauli_strings.local2` function.
 # Usage
 Run `python optimize.py` to localize a spectrum and plot the convergence.
 The system size N and sample k, number of gradient descent iterations can be set in `optimize.py` :
@@ -31,5 +31,7 @@ if __name__ == "__main__":
 
 The 2-local operators $\tau_i$ are generated in `pauli_strings.py`. The $h_i$ results in the folder `localized` are ordered in the same order that the pauli strings are generated in `pauli_strings`.
 
-Running `python plot_spectrum.py` will load a set of coeficients $h_i$, construct $H=\sum_ih_i\tau_i$, diagonalize $H$ and display the following figure of the density of states of the local $H$ in orange and the intial GOE spectrum in blue.
-![](./figure1.png)
+Running `python plot_spectrum.py` will load a set of coeficients $h_i$, construct $H=\sum_ih_i\tau_i$, diagonalize $H$ and display the following figure where the density of states of the local $H$ is in orange and the intial GOE spectrum is in blue.
+
+![plot](./figure1.png)
+
