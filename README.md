@@ -1,5 +1,6 @@
 # Quantum-Localization
-Minimal code and results from the paper 'Unveiling Order from Chaos by approximate 2-localization of random matrices'
+Minimal code and results from the paper ['Unveiling Order from Chaos by approximate 2-localization of random matrices'](https://www.pnas.org/doi/10.1073/pnas.2308006120)
+
 
 `goe_spectra` countains spectra in text format. `goe_spectra/N/k` is the kth sample of system size N (dimention $2^N$). All the spetra are normalized to 1.
 
