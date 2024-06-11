@@ -5,7 +5,7 @@ Minimal code and results from the paper ['Unveiling Order from Chaos by approxim
 `goe_spectra` countains spectra in text format. `goe_spectra/N/k` is the kth sample of system size N (dimention $2^N$). All the spetra are normalized to 1.
 
 `localized` contains the coeficients $h_i$ after 2-localization of the GOE spectrums. `localized/N/k` are the $h_i$ corresponding to the kth sample of system size N. The $h_i$ are generated in same order as the $\tau_i$ returned by the `pauli_strings.local2` function.
-# Usage
+## Usage
 Run `python optimize.py` to localize a spectrum and plot the convergence.
 The system size N and sample k, number of gradient descent iterations can be set in `optimize.py` :
 
@@ -36,3 +36,11 @@ Running `python plot_spectrum.py` will load a set of coeficients $h_i$, construc
 
 ![plot](./figure1.png)
 
+## 2-local-only model
+The 2-local model used in the paper's also includes 1-local terms (fields). The results in the `localized` correspond to this model with fields, 
+$$\sum_{ij, \alpha\beta} J_{ij}^{\alpha\beta} \sigma_i^\alpha \otimes \sigma_j^\beta\ +\sum_{i,\alpha}h_i^\alpha\sigma_i^\alpha,$$
+However, we also get very good results without including the field. The SFF matches as well as with the fields and the cost also decreases exponentially with N. 
+For convenience of use we also share results for the model with no fields
+$$\sum_{ij, \alpha\beta} J_{ij}^{\alpha\beta} \sigma_i^\alpha \otimes \sigma_j^\beta\.$$
+These results are saved as coupling matrices in the `couplings` folder. Each file starts with the sample number followed by the type of the coupling. There are 6 files per sample since there are 6 coupling types.
+The `couplings_example.py` script shows how to load the couplings and build a Hamiltonian out of them.
