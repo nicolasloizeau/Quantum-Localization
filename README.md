@@ -42,5 +42,5 @@ $$\sum_{ij, \alpha\beta} J_{ij}^{\alpha\beta} \sigma_i^\alpha \otimes \sigma_j^\
 However, we also get very good results without including the field. The SFF matches as well as with the fields and the cost also decreases exponentially with N. 
 For convenience of use we also share results for the model with no fields
 $$\sum_{ij, \alpha\beta} J_{ij}^{\alpha\beta} \sigma_i^\alpha \otimes \sigma_j^\beta\.$$
-These results are saved as coupling matrices in the `couplings` folder. Each file starts with the sample number followed by the type of the coupling. There are 6 files per sample since there are 6 coupling types.
+These results are saved as coupling matrices in the `couplings` folder. Each file starts with the sample number followed by the type of the coupling. There are 5 files per sample since there are 5 coupling types.
 The `couplings_example.py` script shows how to load the couplings and build a Hamiltonian out of them.
